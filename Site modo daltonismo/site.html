@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site do Mano</title>
+    <style>
+        .botoes {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="botoes">
+        <button id="cor" onclick="daltonismo()">Função Daltonismo</button>
+        <button id="cor" onclick="dark()">Modo dark</button>
+        <button id="fonte" onclick="mudarFonte(2)">Aumentar Fonte</button>
+        <button id="fonte" onclick="mudarFonte(-2)">Diminuir Fonte</button>
+    </div>
+
+    <h1>Página do Mano</h1>
+    <p>Esta é uma página de fácil acesso para Todos!</p>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparação de Produtos - Empresa do Mano</h1>
+    <table>
+        <tr>
+            <th>Produto</th>
+            <th>Características</th>
+            <th>Preço</th>
+        </tr>
+        <tr>
+            <td>Homem aranha</td>
+            <td>Alugue o miranaha para sua festa</td>
+            <td>R$ 100,00</td>
+        </tr>
+        <tr>
+            <td>Batman</td>
+            <td>Alugue o Batman para estragar infância das crianças!</td>
+            <td>R$ 150,00</td>
+        </tr>
+        <tr>
+            <td>Lanterna verde</td>
+            <td>Só nós ajude com esse personagem</td>
+            <td>R$ 1,00</td>
+        </tr> 
+        </tr>
+    </table>
+    <script>
+        // Função para trocar cores para daltônicos
+        let colorsEnabled = true;
+
+        function daltonismo() {
+            const body = document.body;
+            colorsEnabled = !colorsEnabled;
+
+            if (colorsEnabled) {
+                body.style.backgroundColor = "";
+                body.style.color = "";
+            } else {
+                body.style.backgroundColor = "rgb(38, 72, 135)";
+                body.style.color = "#ab9d1d";
+            }
+        }
+         // Função para deixa no modo escuro
+        function dark() {
+            const body = document.body;
+            colorsEnabled = !colorsEnabled;
+
+            if (colorsEnabled) {
+                body.style.backgroundColor = "";
+                body.style.color = "";
+            } else {
+                body.style.backgroundColor = "#000000";
+                body.style.color = "#fff";
+            }
+        }
+
+        // Função para aumentar/diminuir o tamanho das letras
+        function mudarFonte(change) {
+            const body = document.body;
+            const currentSize = window.getComputedStyle(body, null).getPropertyValue('font-size');
+            const newSize = (parseInt(currentSize) + change) + 'px';
+            body.style.fontSize = newSize;
+        }
+    </script>
+</body>
+</html>
